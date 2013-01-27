@@ -12,8 +12,6 @@ Contrib Admin is required.
 
 1. Add "geoprisma_config" to your INSTALLED_APPS setting like this::
 
-      MEDIA_URL_geoprisma_config = '/media-geoprisma_config/'
-      ....
       INSTALLED_APPS = (
           ...
           'geoprisma_config',
@@ -28,10 +26,16 @@ Contrib Admin is required.
 4. Start the development server and visit http://127.0.0.1:8000/admin/
   to manage your geoprisma configs (you'll need the Admin app enabled).
 
+Production Setup
+----------------
+
+Staticfiles is needed to work, so check https://docs.djangoproject.com/en/dev/howto/static-files/ for support.
+
 Tested
 ------
 
-This app have been tested with Django 1.2 and Django 1.3, tests for django 1.4 and 1.5 are on the way.
+This app have been tested with Django 1.3, tests for django 1.4 and 1.5 are on the way.
+Django 1.2 might be ok if you add django-staticfiles app. Check https://docs.djangoproject.com/en/dev/howto/static-files/
 
 BSD License
 =======
