@@ -5,28 +5,38 @@ Tool to configure geoprisma maps using a prostgresql database. It's made to be i
 
 Geoprisma is a library used for webmapping made by MapGears. You can find the code at http://www.geoprisma.org
 
+Install
+-------
+
+Get it from pypi:
+
+    pip install geoprisma_config
+
+Get it from github:
+
+    git clone git://github.com/solution-globale-informatique/geoprisma_config.git
+    cd geoprisma_config
+    python setup.py
+
 Quick start
 -----------
 
 Contrib Admin is required.
 
-1. Install geoprisma_config:
-    pip isntall geoprisma_config
-
-2. Add "geoprisma_config" to your INSTALLED_APPS setting like this::
+1. Add "geoprisma_config" to your INSTALLED_APPS setting like this::
 
       INSTALLED_APPS = (
           ...
           'geoprisma_config',
       )
 
-3. Include the geoprisma_config URLconf in your project urls.py like this::
+2. Include the geoprisma_config URLconf in your project urls.py like this::
 
       url(r'^geoprisma_config/', include('geoprisma_config.urls')),
 
-4. Run `python manage.py syncdb` to create the geoprisma_config models.
+3. Run `python manage.py syncdb` to create the geoprisma_config models.
 
-5. Start the development server and visit http://127.0.0.1:8000/admin/
+4. Start the development server and visit http://127.0.0.1:8000/admin/
   to manage your geoprisma configs (you'll need the Admin app enabled).
 
 Production Setup
