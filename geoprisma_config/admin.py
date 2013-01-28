@@ -1,3 +1,4 @@
+import django
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.admin.util import unquote
@@ -115,8 +116,12 @@ class BaseModelAdmin(admin.ModelAdmin):
                 pass
 
         try:
-            cl = ChangeList(request, self.model, list_display, self.list_display_links, self.list_filter,
-                            self.date_hierarchy, self.search_fields, self.list_select_related, self.list_per_page, self.list_editable, self)
+            if django.VERSION[0:2] < (1, 4):
+                cl = ChangeList(request, self.model, list_display, self.list_display_links, self.list_filter,
+                                self.date_hierarchy, self.search_fields, self.list_select_related, self.list_per_page, self.list_editable, self)
+            else:
+                cl = ChangeList(request, self.model, list_display, self.list_display_links, self.list_filter,
+                                self.date_hierarchy, self.search_fields, self.list_select_related, self.list_per_page, self.list_max_show_all, self.list_editable, self)
 
         except IncorrectLookupParameters:
             # Wacky lookup parameters were given, so redirect to the main
@@ -188,13 +193,18 @@ class BaseModelAdmin(admin.ModelAdmin):
         else:
             action_form = None
 
+        if django.VERSION[0:2] < (1, 4):
+            root_path = self.admin_site.root_path
+        else:
+            root_path = request.get_full_path()
+
         context = {
             'model_name': force_unicode(self.model._meta.verbose_name),
             'lc': {
                 'title': cl.title,
                 'cl': cl,
                 'media': media,
-                'root_path': self.admin_site.root_path,
+                'root_path': root_path,
                 'app_label': app_label,
                 },
             'action_form': action_form,

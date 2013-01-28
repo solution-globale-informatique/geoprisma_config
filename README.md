@@ -25,14 +25,14 @@ Contrib Admin is required.
 
 1. Add "geoprisma_config" to your INSTALLED_APPS setting like this::
 
-      INSTALLED_APPS = (
-          ...
-          'geoprisma_config',
-      )
+    INSTALLED_APPS = (
+        ...
+        'geoprisma_config',
+    )
 
 2. Include the geoprisma_config URLconf in your project urls.py like this::
 
-      url(r'^geoprisma_config/', include('geoprisma_config.urls')),
+    url(r'^geoprisma_config/', include('geoprisma_config.urls')),
 
 3. Run `python manage.py syncdb` to create the geoprisma_config models.
 
