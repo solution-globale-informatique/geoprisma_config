@@ -47,7 +47,7 @@ Staticfiles is needed to work, so check https://docs.djangoproject.com/en/dev/ho
 Tested
 ------
 
-This app have been tested with Django 1.3, tests for django 1.4 and 1.5 are on the way.
+This app have been tested with Django 1.3, 1.4 and 1.5 .
 Django 1.2 might be ok if you add django-staticfiles app. Check https://docs.djangoproject.com/en/dev/howto/static-files/
 
 BSD License
