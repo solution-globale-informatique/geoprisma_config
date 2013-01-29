@@ -17,7 +17,11 @@ from geoprisma_config.models import *
 from geoprisma_config.forms import *
 from utils import join_url
 
-from django.conf.urls.defaults import patterns
+try:
+    from django.conf.urls import patterns
+except ImportError:
+    from django.conf.urls.defaults import patterns
+
 
 # Inlines
 
