@@ -21,22 +21,24 @@ Get it from github:
 Quick start
 -----------
 
-Contrib Admin is required.
+Contrib Admin is required so uncomment "django.contrib.admin" in the INSTALLED_APPS setting.
 
-1. Add "geoprisma_config" to your INSTALLED_APPS setting like this::
+Add "geoprisma_config" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = (
+        ...
+        'django.contrib.admin',
         ...
         'geoprisma_config',
     )
 
-2. Include the geoprisma_config URLconf in your project urls.py like this::
+Include the geoprisma_config URLconf in your project urls.py like this::
 
     url(r'^geoprisma_config/', include('geoprisma_config.urls')),
 
-3. Run `python manage.py syncdb` to create the geoprisma_config models.
+Run `python manage.py syncdb` to create the geoprisma_config models.
 
-4. Start the development server and visit http://127.0.0.1:8000/admin/
+Start the development server and visit http://127.0.0.1:8000/admin/
   to manage your geoprisma configs (you'll need the Admin app enabled).
 
 Production Setup
