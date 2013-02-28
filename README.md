@@ -21,7 +21,7 @@ Get it from github:
 Quick start
 -----------
 
-Contrib Admin is required so uncomment "django.contrib.admin" in the INSTALLED_APPS setting.
+Contrib Admin is required so uncomment "django.contrib.admin" in the INSTALLED_APPS setting. Refer to https://docs.djangoproject.com/en/1.4/ref/contrib/admin/ for more informations
 
 Add "geoprisma_config" to your INSTALLED_APPS setting like this::
 
